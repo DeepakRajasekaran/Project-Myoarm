@@ -15,11 +15,11 @@
 #define INDEX  4
 #define THUMB  5
 
-Servo servoLittleFinger;         // Define servo fingers
-Servo servoRingFinger;         // Define servo fingers
-Servo servoMiddleFinger;         // Define servo fingers
-Servo servoIndexFinger;         // Define servo fingers
-Servo servoThumbFinger;         // Define servo fingers
+Servo pinky;         // Define servo fingers
+Servo ring;         // Define servo fingers
+Servo middle;         // Define servo fingers
+Servo index;         // Define servo fingers
+Servo thumb;         // Define servo fingers
 
 int finger;
 
@@ -33,30 +33,30 @@ void closehand(){for(finger = 1; finger < 6 ; finger++){closeFinger(finger);}}
 // I have used Towardpro MG996R servos
 
 void openFinger(int finger){
-  if(finger==LITTLE){servoLittleFinger.write(0);} // Little finger
-  else if(finger==RING){servoRingFinger.write(170);}// Ring finger
-  else if(finger==MIDDLE){servoMiddleFinger.write(170);}// Middle finger
-  else if(finger==INDEX){servoIndexFinger.write(170);}// Index finger
-  else if(finger==THUMB){servoThumbFinger.write(0);}//Thumb finger
+  if(finger==PINKY){pinky.write(0);} // Little finger
+  else if(finger==RING){ring.write(170);}// Ring finger
+  else if(finger==MIDDLE){middle.write(170);}// Middle finger
+  else if(finger==INDEX){index.write(170);}// Index finger
+  else if(finger==THUMB){thumb.write(0);}//Thumb finger
 }
 
 void closeFinger(int finger){
-  if(finger==LITTLE){servoLittleFinger.write(170);} // Little finger 
-  else if(finger==RING){servoRingFinger.write(0);}// Ring finger
-  else if(finger==MIDDLE){servoMiddleFinger.write(0);}// Middle finger
-  else if(finger==INDEX){servoIndexFinger.write(0);}// Index finger
-  else if(finger==THUMB){servoThumbFinger.write(170);}//Thumb finger
+  if(finger==PINKY){pinky.write(170);} // Little finger 
+  else if(finger==RING){ring.write(0);}// Ring finger
+  else if(finger==MIDDLE){middle.write(0);}// Middle finger
+  else if(finger==INDEX){index.write(0);}// Index finger
+  else if(finger==THUMB){thumb.write(170);}//Thumb finger
 }
 
 void setup(){
   
   Serial.begin(115200); //BAUDRATE set to 115200, remember it to set monitor serial properly (used this BaudRate and "NL&CR" option to visualize the values correctly)
 
-  servoLittleFinger.attach(LITTLEPIN);  // Set Little finger servo to digital pin 3
-  servoRingFinger.attach(RINGPIN);  // Set Ring finger servo to digital pin 5
-  servoMiddleFinger.attach(MIDDLEPIN);  // Set Middle finger servo to digital pin 6
-  servoIndexFinger.attach(INDEXPIN);  // Set Index finger servo to digital pin 9
-  servoThumbFinger.attach(THUMBPIN);  // Set Thumb finger servo to digital pin 10
+  pinky.attach(PINKYPIN);  // Set Little finger servo to digital pin 3
+  ring.attach(RINGPIN);  // Set Ring finger servo to digital pin 5
+  middle.attach(MIDDLEPIN);  // Set Middle finger servo to digital pin 6
+  index.attach(INDEXPIN);  // Set Index finger servo to digital pin 9
+  thumb.attach(THUMBPIN);  // Set Thumb finger servo to digital pin 10
 
 }//end setup
 

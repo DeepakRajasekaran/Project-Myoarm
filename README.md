@@ -30,7 +30,7 @@ This project allows you to control the movements of an InMoov robotic arm using 
 
 ## Contributing
 
-Contributions are welcome! If you have any ideas, suggestions, or improvements, feel free to open an issue or submit a pull request.
+Contributions are welcome! If you have any ideas, suggestions, or improvements, feel free to open an issue or submit a [pull request](https://github.com/DeepakRajasekaran/Project-Myoarm/compare).
 
 ## License
 

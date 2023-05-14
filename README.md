@@ -17,7 +17,7 @@ This project allows you to control the movements of an InMoov robotic arm using 
 
 1. Clone the repository to your local machine.
 2. Connect the servo motors and muscle sensor to the appropriate pins on the Arduino board.
-3. Upload the Arduino sketch (`InMoovEMGMuscleControl.ino`) to your Arduino board.
+3. Upload the Arduino sketch (`EMG_read.ino`) to your Arduino board.
 4. Run the Arduino sketch to start controlling the InMoov arm.
 
 ## Usage

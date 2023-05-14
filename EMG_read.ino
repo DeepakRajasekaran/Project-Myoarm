@@ -1,41 +1,15 @@
-//Script to control InMoov Arm using Muscle Sensor V3 from Advancer Technologies
-//by Carlos Alquezar (calquezar87@gmail.com)
-//Zaragoza (Spain)
-//February 2014
-//Part of Roujin Project (website available soon)
-
-//For information about Muscle Sensor V3 board, manual and other resouces, please visit:
-// http://www.advancertechnologies.com/p/muscle-sensor-v3.html
-
-/*
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details. 
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
-*/
-
-
 #include <Servo.h>
 
 #define THRESHOLD 150 //In order to determine the state of the hand (opened/closed)
 #define EMGPIN 3 //Analog pin connected to Muscle Sensor V3 Board
-#define LITTLEPIN  3 //Digital pin used by Little servo
+#define PINKYPIN  3 //Digital pin used by Little servo
 #define RINGPIN    5 //Digital pin used by Ring servo
 #define MIDDLEPIN  6 //Digital pin used by Middle servo
 #define INDEXPIN   9 //Digital pin used by Index servo
 #define THUMBPIN  10 //Digital pin used by Thumb servo
 
 //Constants used to open and close the fingers
-#define LITTLE 1 
+#define PINKY 1 
 #define RING   2
 #define MIDDLE 3
 #define INDEX  4
@@ -90,9 +64,9 @@ void loop() {// Nothing to do here, all is done in the interrupt function
 
   int value = analogRead(EMGPIN); //Sampling analog signal
   if(value>THRESHOLD) //If the value of the sample is greater than THRESHOLD means that the hand has been closed
-  {closehand();}
+      {closehand();}
   else //Otherwise the hand is open
-  {openhand();}
+      {openhand();}
   Serial.println(value); //You can use serial monitor to set THRESHOLD properly, comparing the values shown when you open and close your hand
 }
 

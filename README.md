@@ -1,4 +1,4 @@
-# 🦾 Project-Myoarm 
+# Project-Myoarm 
 An robotic arm that works using EMG signals
 Control the InMoov robotic arm using Arduino and servo motors.
 
